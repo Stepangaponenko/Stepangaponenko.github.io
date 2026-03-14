@@ -1,57 +1,100 @@
-
+/* Основной фон и шрифт */
 body {
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212; /* Глубокий темный */
+  color: #e0e0e0; /* Светло-серый текст */
+  line-height: 1.6;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
 }
 
 .container {
-  padding: 0 40px;
-  margin-left: 80px;
+  max-width: 600px;
+  background: #1e1e1e; /* Цвет карточки */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid #333;
 }
 
-  /* Свойства ссылок */
-a {
-  display: block;
-  text-decoration:none;
-  margin-bottom: 1.2em;
-  position: relative;
-}
-
-  /* Что делать при наведении на ссылку */
-a:hover {
-  color:#FFD700;
-}
-
-  /* Этим свойством добавляем подчеркивание через создание псевдокласса */
-a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  transform: translateY(1.5em);
-  border-bottom: 1px solid #dadada;
-  width: 300px;
-}
-
+/* Заголовки */
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
+  margin-top: 0;
+  color: #ffffff;
+  letter-spacing: -1px;
 }
 
 h2 {
-  font-size: 1.5em;
-  margin: 1.25em 0;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #FFD700; /* Твое золото */
+  margin-top: 30px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
 }
 
-  /* Свойства фотографии*/
+/* Ссылки */
+a {
+  display: inline-block;
+  color: #bbb;
+  text-decoration: none;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Эффект при наведении на ссылку */
+a:hover {
+  color: #FFD700;
+  transform: translateX(5px); /* Сдвиг вправо при наведении */
+}
+
+/* Красивое подчеркивание (анимированное) */
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #FFD700;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Фотография */
 .photo {
-  border-radius: 100px;
-  /* Радиус скругления */
-  border: 3px solid transparent;
-  /* Параметры рамки */
-  box-shadow: 0 4px 15px 0px rgba(0, 0, 0, 0.52);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Идеальный круг */
   object-fit: cover;
+  border: 4px solid #333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  margin-bottom: 20px;
 }
 
-  /* Эффект наведения на картинку */
+/* Твой эффект с красной рамкой при наведении */
 .photo:hover {
-  border: 3px solid #FF0000;
+  border-color: #FF0000;
+  transform: scale(1.05) rotate(3deg); /* Легкий зум и поворот */
+}
+
+/* Список контактов */
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+/* Футер или мелкий текст */
+p {
+  color: #999;
 }
